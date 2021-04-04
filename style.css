@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+}
+table {
+  width: 100%;
+  border-spacing: 0px;
+}
+th {
+  padding: 10px;
+}
+td {
+  padding: 10px;
+}
