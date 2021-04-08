@@ -3,42 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
       <table border="1">
         <tr>
-          <th>ФИО</th>
-          <th>Телефон</th>
-          <th>Email</th>
-          <th>Skype</th>
-          <th>Комментарий</th>
+          <th class="header-name">ФИО</th>
+          <th class="header-name__tochange-title">Телефон</th>
+          <th class="header-name__tochange">Email</th>
+          <th class="header-name__tochange">Skype</th>
+          <th class="header-name__tochange">Комментарий</th>
+          <th class="header-name__extra-info addInfo">Детальная информация</th>
+            <tr>  
+              <td class="extra-info" rowspan="4"><div class="close">X</div>
+                <div class='extra-info__context'>Работает с такого-то периода</div>
+                <div class='extra-info__context'>Занимает должность</div>
+                <div class='extra-info__context'>семейное положение:</div>
+                <div class='extra-info__context'>Увдечения</div>
+                <div class='extra-info__context'>Достижения:</div>
+              </td>
+            </tr>
+        </tr> 
+        <tr class="user-info">
+          <td class="user-info__name">
+            Смородина Алена Александровна
+            <div class="show"></div>
+          </td>
+          <td class="user-info__phone user-info__phone-toclose">0987658923</td>
+          <td class="user-info__mail">alenasmorodina@gmail.com</td>
+          <td class="user-info__skype">alenasmorodina</td>
+          <td class="user-info__note">Встреча завтра в 11:00.</td>
+          <!-- <td class="extra-info" rowspan="3"><div class="close">X</div></td> -->
+         
         </tr>
-        <tr>
-          <td>Смородина Алена Александровна</td>
-          <td>0987658923</td>
-          <td>alenasmorodina@gmail.com</td>
-          <td>alenasmorodina</td>
-          <td>Встреча завтра в 11:00.</td>
+         
+        <tr class="user-info">
+          <td class="user-info__name">
+            Мироненнко- Коновалов Александр Игнатьевич
+            <div class="show"></div>
+          </td>
+          <td class="user-info__phone">0506123123</td>
+          <td class="user-info__mail">milanovalex@ua.fm</td>
+          <td class="user-info__skype">Milanovalex</td>
+          <td class="user-info__note">Созвониться в пятницу 05.07.2019.</td>
         </tr>
-        <tr>
-          <td>Мироненнко- Коновалов Александр Игнатьевич</td>
-          <td>0506123123</td>
-          <td>milanovalex@ua.fm</td>
-          <td>Milanovalex</td>
-          <td>СЩзвониться в пятницу 05.07.2019.</td>
+        <tr class="user-info">
+          <td class="user-info__name">
+            Зайченко Валентина Александровна
+            <div class="show"></div>
+          </td>
+          <td class="user-info__phone">0966671290</td>
+          <td class="user-info__mail">zay4enkovalya@mail.ru</td>
+          <td class="user-info__skype">zay4enkovalya</td>
+          <td class="user-info__note">
+            Очень занят в ближайшие 2 недели.10.05.2019.
+          </td>
+          </tr>
         </tr>
-        <tr>
-          <td>Зайченко Валентина Александровна</td>
-          <td>0966671290</td>
-          <td>zay4enkovalya@mail.ru</td>
-          <td>zay4enkovalya</td>
-          <td>Очень занят в ближайшие 2 недели.10.05.2019.</td>
-        </tr>
-      </table>
-    </div>
-    <script src="script.js"></script>
+        
+      
+      </table> 
+  
+     <script src="script.js"></script>
+    
+
   </body>
 </html>
