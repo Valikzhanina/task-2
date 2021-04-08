@@ -33,8 +33,23 @@ th {
 }
 
 .user-info__name {
+  font-size: 25px;
   position: relative;
 }
+.user-info__hiden-info {
+  position: relative;
+  padding: 10px;
+  display: none;
+}
+.phone {
+  position: absolute;
+  right: 20px;
+}
+.mail {
+  position: absolute;
+  left: 20px;
+}
+
 .show {
   width: 50px;
   height: 50px;
@@ -49,6 +64,7 @@ th {
   display: none;
 }
 .extra-info {
+  font-size: 25px;
   background-color: rgb(62, 189, 148);
   display: flex;
   right: 0;

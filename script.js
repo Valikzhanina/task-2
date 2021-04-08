@@ -1,18 +1,28 @@
+let res = [];
+
+let promise = fetch('./data.json')
+  .then(function (resp) {
+    return resp.json();
+  })
+  .then(function (data) {
+    data.map((user) => {
+      if (user.name === 'Смородина Алена Александровна') {
+        let text = user.additionalInfo;
+        for (let key in text) {
+          res.push(`${key}: ${text[key]}`);
+          console.log(res);
+        }
+      }
+    });
+  });
+
 $('.user-info').each(function () {
   $('.user-info').click(function () {
     $('.user-info').css('background-color', 'aqua');
+    $('.user-info__hiden-info').show();
     $('.show').hide();
     // $('.user-info__name').each(function () {
-    //   $('.user-info__name').text(
-    //     fetch('./data.json')
-    //       .then(function (resp) {
-    //         return resp.json();
-    //       })
-    //       .then(function (data) {
-    //         // console.log(data);
-    //         return `${data.name} + ${data.phone}+ ${data.mail}`;
-    //       })
-    //   );
+    $('.extra-info__content').text(`${res}`);
     // });
 
     $(this).css('background-color', 'rgb(62, 189, 148)');
@@ -52,4 +62,5 @@ $('.close').click(function () {
   $('.user-info__phone').show();
   $('.user-info').css('background-color', 'aqua');
   $('.user-info__mail').show();
+  $('.user-info__hiden-info').hide();
 });
