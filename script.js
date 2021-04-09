@@ -44,7 +44,6 @@ $('.user-info').each(function () {
 });
 
 $('.close').click(function () {
-  console.log('pressed');
   $('.header-name__extra-info').hide();
   $('.extra-info').hide();
   $('.header-name__tochange').show();
