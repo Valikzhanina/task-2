@@ -16,9 +16,11 @@ $('.user-info').each(function () {
             if (id === user.id) {
               let text = user.additionalInfo;
               for (let key in text) {
-                res.push(`${key}: ${text[key]}`);
+                res.push(
+                  `<li style='list-style-type: none'>${key}: ${text[key]}</li>`
+                );
               }
-              $('.extra-info__content').text(res);
+              $('.extra-info__content').html(res);
             }
           });
         });
