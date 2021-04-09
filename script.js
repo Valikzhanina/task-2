@@ -1,33 +1,9 @@
-// let res = [];
-
-// let promise = fetch('./data.json')
-//   .then(function (resp) {
-//     return resp.json();
-//   })
-//   .then(function (data) {
-//     data.map((user) => {
-//       $('.user-info').on('click', function (e) {
-//         res = [];
-//         let id = e.target.id;
-//         if (id === user.id) {
-//           let text = user.additionalInfo;
-//           for (let key in text) {
-//             res.push(`${key}: ${text[key]}`);
-//             console.log(res);
-//           }
-//         }
-//       });
-//     });
-//   });
-
+let res = [];
 $('.user-info').each(function () {
   $('.user-info').click(function () {
     $('.user-info').css('background-color', 'aqua');
     $('.user-info__hiden-info').show();
     $('.show').hide();
-    // $('.user-info__name').each(function () {
-    let res = [];
-
     let promise = fetch('./data.json')
       .then(function (resp) {
         return resp.json();
@@ -47,17 +23,11 @@ $('.user-info').each(function () {
           });
         });
       });
-
-    // $('.extra-info__content').text(res);
-    // });
-
     $(this).css('background-color', 'rgb(62, 189, 148)');
-
     $(this)
       .closest('.user - info__name')
       .closest('.show')
       .css('display', 'block');
-
     $('.header-name__tochange').hide();
     $('.user-info__skype').hide();
     $('.user-info__note').hide();
@@ -68,12 +38,6 @@ $('.user-info').each(function () {
     $('.user-info__phone').hide();
     $('.header-name__extra-info').show();
     $('.extra-info').show();
-    // $('.extra-info').show();
-    // $('.show').each(function () {
-    //   if ($('.user-info').css('background-color') === 'rgb(21, 102, 75)') {
-    //     $(this).show();
-    //   }
-    // });
   });
 });
 
