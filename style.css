@@ -1,76 +1,76 @@
 .container {
   width: 100%;
+  display: flex;
 }
 table {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid black;
   position: relative;
-  overflow: hidden;
 }
 td,
 th {
-  padding: 10px;
-  height: 100px;
+  padding: 15px;
 }
 .user-info {
   background-color: aqua;
 }
-.extra-info {
-  position: relative;
-}
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 15px;
-  font-size: 50px;
-  font-weight: 700;
-  color: brown;
-}
 .user-info__name {
-  font-size: 25px;
   position: relative;
 }
+.user-info__name::after {
+  content: '';
+  position: absolute;
+  vertical-align: middle;
+  left: 100%;
+  border: 10px solid transparent;
+  border-left: 10px solid rgb(84, 214, 143);
+  top: 50%;
+  transform: translate(0, -50%);
+  display: none;
+}
+.user-info__name.showtriangle::after {
+  display: block;
+}
+
 .user-info__hiden-info {
-  position: relative;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between;
   display: none;
 }
-.phone {
-  position: absolute;
-  right: 20px;
-}
-.mail {
-  position: absolute;
-  left: 20px;
-}
-.show {
-  width: 50px;
-  height: 50px;
-  clip-path: polygon(0 0, 0% 100%, 99% 48%);
-  background-color: rgb(62, 189, 148);
-  position: absolute;
-  right: -50px;
-  top: 30%;
-  display: none;
-}
+
 .header-name__extra-info {
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid black;
+  padding: 15px;
+  display: none;
+}
+.additional-container {
+  box-sizing: border-box;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: rgb(62, 189, 148);
   display: none;
 }
 
 .extra-info {
-  font-size: 25px;
-  height: 100%;
-  background-color: rgb(62, 189, 148);
+  padding: 15px;
+  box-sizing: border-box;
   display: flex;
-  left: 620px;
-  right: 0;
+  flex-direction: row;
+  justify-content: space-between;
   display: none;
-  position: absolute;
 }
-.extra-info__context {
-  font-size: 25px;
+
+.close {
+  font-size: 30px;
+  font-weight: 700;
+  color: brown;
 }
-.table2 {
-  display: none;
+.extra-info__content {
+  margin: 0em;
+  padding: 0;
 }
