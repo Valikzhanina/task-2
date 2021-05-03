@@ -4,7 +4,6 @@ let firstWidth = $('.header-name').css('width');
 
 $(this).on('click', function (e) {
   id = e.target.id;
-  console.log(id);
 });
 
 $('.user-info').click(function () {
@@ -24,7 +23,6 @@ $('.user-info').click(function () {
   async function getInfo(url) {
     let response = await fetch(url);
     let info = await response.json();
-    console.log(info);
 
     function createList(info) {
       for (let key in info) {
