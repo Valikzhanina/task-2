@@ -1,10 +1,13 @@
 let res = [];
-
+let id;
 let firstWidth = $('.header-name').css('width');
-console.log(firstWidth);
+
+$(this).on('click', function (e) {
+  id = e.target.id;
+  console.log(id);
+});
 
 $('.user-info').click(function () {
-  console.log('pressed');
   $('.user-info').css('background-color', 'aqua');
   $('.user-info__name').removeClass('showtriangle');
   $(this).css('background-color', 'rgb(62, 189, 148)');
@@ -14,30 +17,33 @@ $('.user-info').click(function () {
   $('.additional-container').show();
   $('.user-info__hiden-info').css('display', 'flex');
   $('.show').hide();
-  let promise = fetch('./data.json')
-    .then(function (resp) {
-      return resp.json();
-    })
-    .then(function (data) {
-      $('.user-info').on('click', function (e) {
-        console.log(this);
-        console.log(55);
-        res = [];
-        let id = e.target.id;
-        data.map((user) => {
-          // console.log(user);
-          if (id === user.id) {
-            let text = user.additionalInfo;
-            for (let key in text) {
-              res.push(
-                `<li style='list-style-type: none'>${key}: ${text[key]}</li>`
-              );
-            }
+
+  const url = './data.json';
+
+  res = [];
+  async function getInfo(url) {
+    let response = await fetch(url);
+    let info = await response.json();
+    console.log(info);
+
+    function createList(info) {
+      for (let key in info) {
+        if (info[key].id === id) {
+          let text = info[key].additionalInfo;
+          for (let key in text) {
+            res.push(
+              `<li style='list-style-type: none'>${key}: ${text[key]}</li>`
+            );
+
             $('.extra-info__content').html(res);
           }
-        });
-      });
-    });
+        }
+      }
+    }
+    createList(info);
+  }
+  getInfo(url);
+
   $(this).css('background-color', 'rgb(62, 189, 148)');
 
   $(this)

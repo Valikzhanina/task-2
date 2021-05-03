@@ -23,8 +23,8 @@ th {
   position: absolute;
   vertical-align: middle;
   left: 100%;
-  border: 10px solid transparent;
-  border-left: 10px solid rgb(84, 214, 143);
+  border: 15px solid transparent;
+  border-left: 15px solid rgb(84, 214, 143);
   top: 50%;
   transform: translate(0, -50%);
   display: none;
